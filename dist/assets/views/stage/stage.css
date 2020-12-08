@@ -1,0 +1,36 @@
+.stage {
+    background: var(--color-primary);
+    background: linear-gradient(#284d75, #9198e5);
+    padding-top: var(--margin-xlarge);
+    padding-bottom: var(--margin-xlarge);
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    color: #fff;
+}
+    
+    .stage >.content{
+        grid-column: container;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+    }
+    
+    .stage picture{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        mix-blend-mode: screen;
+    }
+    
+    .stage picture img{
+            -o-object-fit: cover;
+               object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }

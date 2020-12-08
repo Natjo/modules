@@ -1,0 +1,23 @@
+.stage-article{
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+}
+
+    .stage-article >.content{
+        grid-column: container;
+    }
+
+    .stage-article h1{
+        margin-bottom: 20px;
+    }
+
+    .stage-article .chapo{
+        font-size: var(--font-size-medium);
+    }
+
+    .stage-article time{
+        display: block;
+        margin-top: 20px;
+        font-style: italic;
+        opacity: .6;
+    }

@@ -1,0 +1,160 @@
+form:not(.custom):not(#loginform) .field{
+        position: relative;
+        z-index: 0;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    form:not(.custom):not(#loginform) label{
+        height: 34px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    form:not(.custom):not(#loginform) label.placeholder{
+            position: absolute;
+            z-index: -1;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                    user-select: none;
+            pointer-events: none;
+            transition: all .2s ease;
+
+        }
+    form:not(.custom):not(#loginform) label small{
+            opacity: .5;
+            display: inline-block;
+            margin-left: 8px;
+        }
+    form:not(.custom):not(#loginform) label.active{
+            font-weight: 500;
+            transform: translateY(-20px);
+            opacity: .4;
+            font-size: 1.1rem;
+        }
+    form:not(.custom):not(#loginform) input[type=text],
+	form:not(.custom):not(#loginform) [type=email],
+	form:not(.custom):not(#loginform) [type=password],
+	form:not(.custom):not(#loginform) [type=tel],
+	form:not(.custom):not(#loginform) [type=search],
+	form:not(.custom):not(#loginform) [type=date],
+	form:not(.custom):not(#loginform) [type=number],
+	form:not(.custom):not(#loginform) [type=url]{
+		padding: 0;
+		height: 40px;
+        width: 100%;
+        background: none;
+        border: none;
+		border-bottom: 1px solid  var(--color-gray);
+        margin: 0;
+    }
+    form:not(.custom):not(#loginform) input[type=text].error,form:not(.custom):not(#loginform) [type=email].error,form:not(.custom):not(#loginform) [type=password].error,form:not(.custom):not(#loginform) [type=tel].error,form:not(.custom):not(#loginform) [type=search].error,form:not(.custom):not(#loginform) [type=date].error,form:not(.custom):not(#loginform) [type=number].error,form:not(.custom):not(#loginform) [type=url].error{
+            border-color: var(--color-error);
+        }
+    form:not(.custom):not(#loginform) textarea{
+		width: 100%;
+		resize: vertical;
+        padding: 10px 0;
+        background: none;
+		border: none;
+        border-bottom: 1px solid var(--color-gray);
+        border-right: 1px solid var(--color-gray);
+        margin: 0;
+        min-height: 160px;
+    }
+    form:not(.custom):not(#loginform) textarea .error{
+            border-color: var(--color-error);
+        }
+    form:not(.custom):not(#loginform) .error-msg{
+        color: var(--color-error);
+        margin-top: 6px;
+        font-size: 13px;
+    }
+    form:not(.custom):not(#loginform) [type=submit]{
+        background: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        font-weight: 500;
+        border-bottom: 2px solid var(--color-primary);
+        padding: 0;
+        cursor: pointer;
+        padding-bottom: 4px; 
+    }
+    form:not(.custom):not(#loginform) .action{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+       
+    }
+    form:not(.custom):not(#loginform) [type=radio],
+	form:not(.custom):not(#loginform) [type=checkbox]{
+		height: 15px;
+        width: 15px;
+    }
+    form:not(.custom):not(#loginform) [type=radio][type=radio],form:not(.custom):not(#loginform) [type=checkbox][type=radio]{
+			border-radius: 50%;
+		}
+    form:not(.custom):not(#loginform) [type=radio][type=radio]:before,form:not(.custom):not(#loginform) [type=checkbox][type=radio]:before{
+				border-radius: 50%;
+			}
+    form:not(.custom):not(#loginform) [type=radio],
+	form:not(.custom):not(#loginform) [type=checkbox]{
+		vertical-align: middle;
+		border: 1px solid #BDBDBD;
+		margin: 0 5px 0 0;
+		display: inline-flex;
+		align-items: center;
+        justify-content: center;
+}
+    form:not(.custom):not(#loginform) [type=radio]:not(:first-of-type),form:not(.custom):not(#loginform) [type=checkbox]:not(:first-of-type){
+			margin-left: 8px;
+		}
+    form:not(.custom):not(#loginform) [type=radio]:before,form:not(.custom):not(#loginform) [type=checkbox]:before{
+			content:"";
+			background: var(--color-valid);
+			display: block;
+			width: 0px;
+			height: 0px;
+			transition: .2s all ease;
+		}
+    form:not(.custom):not(#loginform) [type=radio]:checked:before,form:not(.custom):not(#loginform) [type=checkbox]:checked:before{
+				width: 10px;
+				height: 10px;
+			}
+    form:not(.custom):not(#loginform) [type=radio] + label,form:not(.custom):not(#loginform) [type=checkbox] + label{
+			display: inline-block;
+			vertical-align: middle;
+            margin: 0;
+            font-style: normal;
+            position: relative;
+            padding-left: 5px;
+            height: auto;
+            cursor: pointer;
+		}
+
+::-webkit-input-placeholder {
+    color: inherit;
+    font-style: normal;
+    font-family: inherit;
+    opacity: 1;
+    font-weight: 400;
+}
+::-moz-placeholder {
+    color: inherit;
+    font-style: normal;
+    font-family: inherit;
+    opacity: 1;
+    font-weight: 400;
+}
+:-ms-input-placeholder {
+    color: inherit;
+    font-style: normal;
+    font-family: inherit;
+    opacity: 1;
+    font-weight: 400;
+}

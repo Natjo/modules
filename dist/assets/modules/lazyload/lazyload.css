@@ -1,0 +1,27 @@
+/* reveal */
+@-webkit-keyframes reveal{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes reveal{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+body{
+    background: red;
+}
+img.reveal{
+	opacity: 0;
+}
+img:not(.lazy){
+	-webkit-animation: reveal .4s ease both;
+	        animation: reveal .4s ease both;
+}

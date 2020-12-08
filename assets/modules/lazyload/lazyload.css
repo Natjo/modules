@@ -1,0 +1,18 @@
+/* reveal */
+@keyframes reveal{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+body{
+    background: red;
+}
+img.reveal{
+	opacity: 0;
+}
+img:not(.lazy){
+	animation: reveal .4s ease both;
+}

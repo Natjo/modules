@@ -1,64 +1,24 @@
-<html>
+<?php include("common/top.php"); ?>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Modules</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+<main>
+    <div class="sidebar">
+ <!--        <nav>
+            <h1>Views</h1>
+            <div>
+                <button>Views</button>
+                <button>Modules</button>
+            </div>
+            <input type="text">
+        </nav> -->
 
-    <style>
-        body {
-            margin: 0;
-        }
-
-        header[role=banner] {
-            display: flex;
-            background: #f5f5f5;
-            margin-bottom: 20px;
-        }
-
-        main {
-            display: flex;
-        }
-
-        .sidebar {
-            width: 250px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 10px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <header role="banner">
-        <h1>Modules</h1>
-        <input type="text">
-    </header>
-
-    <main>
-        <div class="sidebar">
-
-            <button>Views</button>
-            <button>Example</button>
-            <button>Modules</button>
-
-            <h2>Views</h2>
-
+        <div>
             <h3>Headers</h3>
             <ul>
-                <li>
-                    <button>header 1</button>
+                <li data-view="header-1">
+                    <button class="btn-see">header 1</button>
                 </li>
-                <li>
-                    <button>header 2</button>
+                <li data-view="header-2">
+                    <button class="btn-see">header 2</button>
                 </li>
             </ul>
 
@@ -96,7 +56,9 @@
             <ul>
                 <li><button>breadcrumb 1</button></li>
             </ul>
+
             <h3>Pre footer</h3>
+
             <h3>Footer</h3>
             <ul>
                 <li><button>footer 1</button></li>
@@ -109,8 +71,6 @@
             </ul>
 
 
-            <hr>
-            <h2>Exemples</h2>
             <h3>Formulaires</h3>
             <ul>
                 <li>
@@ -141,54 +101,73 @@
                     <button>carousel</button>
                 </li>
             </ul>
+
             <h3>Filters</h3>
             <ul>
                 <li>
                     <button>Simple push filter</button>
                 </li>
             </ul>
-
-            <hr>
-
-            <h2>Modules</h2>
-            <h3>Formulaire</h3>
-            <ul>
-                <li><button>formValidate</button></li>
-                <li><button>labelPlaceholder</button></li>
-            </ul>
-            <h3>Modals</h3>
-            <ul>
-                <li><button>Modals</button></li>
-                <li><button>popins</button></li>
-            </ul>
-
         </div>
+        <hr>
+
+        <h2>Modules</h2>
+        <h3>Formulaire</h3>
+        <ul>
+            <li><button>formValidate</button></li>
+            <li><button>labelPlaceholder</button></li>
+        </ul>
+        <h3>Modals</h3>
+        <ul>
+            <li><button>Modals</button></li>
+            <li><button>popins</button></li>
+        </ul>
+
+    </div>
+    <section class="main-content">
+
+        <!-- header-1 -->
         <section>
-            <h2>Formulaire</h2>
-            <a href="">Example</a>
-            <button>Téléchargé</button>
-            <div>git clone</div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, blanditiis?</p>
-            <h3>Dépendance</h3>
-            <ul>
-                <li>formaValidate</li>
-                <li>formPlaceHolder</li>
-            </ul>
-            <h3>Fonctionnement</h3>
-            <h3>Options</h3>
-            <h3>Parametre</h3>
-            <h3>Events</h3>
-            <h3>Variables</h3>
-            <h3>php</h3>
-            <h3>html</h3>
-            <h3>js</h3>
-            <h3>css</h3>
-
-
+            <?php include("assets/views/header-1/README.md"); ?>
+            <iframe src="header-1.php" frameborder="0"></iframe>
+            <?php
+            views('header-1', array(
+                "navigation" => array(
+                    array(
+                        "name" => "Home",
+                        "href" => "/"
+                    ),
+                    array(
+                        "name" => "Contact",
+                        "href" => "/contact"
+                    ),
+                    array(
+                        "name" => "Articles",
+                        "href" => "/archive"
+                    ),
+                ),
+                "options" => ""
+            ));
+            ?>
         </section>
-    </main>
+
+        <!-- stage-article -->
+        <section>
+            <?php include("assets/views/stage-article/README.md"); ?>
+            <?php views('stage-article'); ?>
+        </section>
+
+        <!-- footer-1 -->
+        <section>
+            <?php include("assets/views/footer/README.md"); ?>
+            <?php views('footer'); ?>
+        </section>
 
 
-</body>
 
-</html>
+
+
+    </section>
+</main>
+
+<?php include("common/bottom.php"); ?>

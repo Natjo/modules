@@ -1,0 +1,58 @@
+:root{
+
+    --container-width: 1280px;
+    --container-margin: 40px;
+
+    --gap: 20px;
+
+    --font-primary: "CeraPro";
+    --font-secondary: "Rufina";
+    --font-icon: 'icomoon';
+
+    --color-primary: aliceblue;
+    --color-secondary: antiquewhite;
+    --color-third: red;
+
+    --color-gray-light: #D7CFC6;
+    --color-gray: #5E6060;
+    --color-gray-dark: #2D2926;
+
+    --color-text: black;
+    --color-error: red;
+    --color-warning: orange;
+    --color-valid: green;
+
+    --font-size-sxmall: 1.1rem;
+    --font-size-small: 1.2rem;
+    --font-size: 1.4rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 2rem;
+    --font-size-xlarge: 3rem;
+    --font-size-xxlarge: 3rem;
+
+    --margin-xsmall: 5px;
+    --margin-small: 10px;
+    --margin: 20px;
+    --margin-large: 40px;
+    --margin-xlarge: 40px;
+}
+
+@media (--breakpoint-medium-up){
+    :root{
+        --gap: 40px;
+
+        --font-size-sxmall: 1.1rem;
+        --font-size-small: 1.2rem;
+        --font-size: 1.4rem;
+        --font-size-medium: 1.8rem;
+        --font-size-large: 2.2rem;
+        --font-size-xlarge: 3.4rem;
+        --font-size-xxlarge: 6rem;
+
+        --margin-xsmall: 10px;
+        --margin-small: 20px;
+        --margin: 40px;
+        --margin-large: 60px;
+        --margin-xlarge: 80px;
+    }
+}

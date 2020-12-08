@@ -1,0 +1,19 @@
+.block-intro{
+    padding-top: var(--margin-large);
+    padding-bottom: var(--margin-large);
+    background: var(--color-secondary);
+    background: linear-gradient(#9198e5 50%, var(--color-secondary));
+    color: #fff;
+    text-align: center;
+
+    >.content{
+        grid-column: container;
+    }
+    p{
+        font-size: var(--font-size-large);
+        line-height: 1.4;
+    }
+    h2{
+        margin-bottom: var(--margin);
+    }
+}

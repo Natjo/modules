@@ -1,0 +1,23 @@
+
+.block-contact{
+    padding-top: var(--margin-large);
+    padding-bottom: var(--margin-xlarge);
+}
+    
+    .block-contact >header{
+        grid-column: container;
+        margin-bottom:  var(--margin);
+    }
+    
+    .block-contact >.content{
+        grid-column: container;
+    }
+    
+    .block-contact h2{
+        margin-bottom: 10px;
+    }
+    
+    .block-contact .text{
+        font-size: var(--font-size-large);
+        line-height: 1.2;
+    }

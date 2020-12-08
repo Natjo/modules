@@ -1,0 +1,102 @@
+header[role=banner]{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background: #fff;
+    transition: background .2s ease;
+
+    >.content{
+        grid-column: container;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        transition: height .2s ease;
+    }
+
+    &.transparent{
+        position: fixed;
+        background: transparent;
+        width: 100%;
+    }
+
+    &.small{
+        background: #fff;
+        .content{
+            height: 50px;
+        }
+    }
+
+    .btn-nav{
+        display: none;
+    }
+
+    .logo{
+        width: 30px;
+    }
+
+    nav[role=navigation]{
+        a{
+            &.active{
+                font-weight: 800;
+            }
+        }
+    }
+
+    @media (max-width: 1023px){
+        .btn-nav{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1001;
+
+            &:after{
+                content:"\e905";
+                font-family: var(--font-icon);
+            }
+            &.active{
+                & + nav{
+                    transform: translateX(100%);
+                }
+                &:after{
+                    content:'\e90a';
+                }
+            }
+        }
+        .logo{
+            position: relative;
+            z-index: 1001;  
+        }
+        nav{
+            position: fixed;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 100%;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: #fff;
+            font-size: var(--font-size-xlarge);
+            line-height: 2;
+            transition: transform .3s ease;
+        }
+    }
+
+    @media (min-width: 1024px){
+        nav[role=navigation]{
+            ul{
+                display: flex;
+            }
+            li{
+                &:not(:first-of-type){
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
