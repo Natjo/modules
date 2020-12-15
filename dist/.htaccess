@@ -17,3 +17,5 @@ RewriteCond %{REQUEST_FILENAME} !\.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f 
 RewriteRule ^/?(.*?)/?$ $1.php
+
+Header set Access-Control-Allow-Origin 'origin-list'

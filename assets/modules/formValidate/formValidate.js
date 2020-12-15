@@ -1,34 +1,53 @@
 /* eslint-disable */
 
-// Enable submit if consent checkbox
-// checkvalidity only if clicked on submit (enabled)
+/**
+ * formValidate
+ */
 
-const FormValidate = (form, onSend) => {
+const FormValidate = function(form, onSend){
     const fields = form.querySelectorAll(':required');
-    const submit = form.querySelector('[type="submit"]');
+    const mandatory = form.getAttribute("data-mandatory");
     let validity = true;
-    var valueMissing  = false;
     var init = true;
 
+    this.reset = () => {
+        init = true;
+        for (let field of fields) {
+            field.classList.remove('valid');
+            field.classList.remove('error');
+            field.parentNode.querySelector('.error-msg').innerHTML = '';
+        }
+    }
+ 
     // check error
     const validate = () => {
         if(init) return;
         validity = true;
         for (let field of fields) {
-            const msg = field.parentNode.querySelector('.error-msg');
+            const error_msg = field.parentNode.querySelector('.error-msg');
+            const dataTypeMismatch = field.dataset.typemismatch;
+            const dataPatternMismatch = field.dataset.patternmismatch;
+            const tooLong = field.validity.tooLong;
+            const tooShort = field.validity.tooShort;
+            const typeMismatch = field.validity.typeMismatch;
+            const patternMismatch = field.validity.patternMismatch;
+            const stepMismatch = field.validity.stepMismatch;
+            const valueMissing = field.validity.valueMissing;
+
             if (!field.checkValidity()) {
                 field.classList.add('error');
                 field.classList.remove('valid');
-                if (field.name === 'apply_phone') {
-                    msg.innerHTML = 'Veuillez saisir un numéro de téléphone valide avec 13 caractères maximum.';
-                } else {
-                    msg.innerHTML = field.validationMessage;
-                }
+                var msg = "";
+				if((typeMismatch || tooLong || tooShort || stepMismatch) && dataTypeMismatch) msg = dataTypeMismatch;
+				if(patternMismatch && dataPatternMismatch) msg = dataPatternMismatch;
+				if(valueMissing && mandatory) msg = mandatory;
+				field.setCustomValidity(msg);
+				error_msg.innerHTML = field.validationMessage;
                 validity = false;
             } else {
                 field.classList.add('valid');
                 field.classList.remove('error');
-                msg.innerHTML = '';
+                error_msg.innerHTML = '';
             }
         }
         return validity;
@@ -38,23 +57,14 @@ const FormValidate = (form, onSend) => {
         const msg = document.createElement('div');
         msg.className = 'error-msg';
         field.parentNode.appendChild(msg);
-        const status = document.createElement('div');
-        status.className = 'status';
-        field.parentNode.appendChild(status);
-        field.addEventListener('input', () => {
-            validate();
-        });
+        field.addEventListener('input', () => validate());
     }
 
     form.onsubmit = e => {
         e.preventDefault();
-        if(!valueMissing){
-            init = false;
-            if(validate()) onSend();
-        }
+        init = false;
+        validate() && onSend();
     };
-
-   // test();
 };
 
 export default FormValidate;

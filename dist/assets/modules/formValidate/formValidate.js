@@ -1,66 +1,49 @@
-"use strict";
+const FormValidate = function (a, b) {
+  const c = a.querySelectorAll(':required'),
+        d = a.getAttribute("data-mandatory");
+  let e = !0;
+  var f = !0;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
+  this.reset = () => {
+    f = !0;
 
-const FormValidate = (form, onSend) => {
-  const fields = form.querySelectorAll(':required');
-  const submit = form.querySelector('[type="submit"]');
-  let validity = true;
-  var valueMissing = false;
-  var init = true;
-
-  const validate = () => {
-    if (init) return;
-    validity = true;
-
-    for (let field of fields) {
-      const msg = field.parentNode.querySelector('.error-msg');
-
-      if (!field.checkValidity()) {
-        field.classList.add('error');
-        field.classList.remove('valid');
-
-        if (field.name === 'apply_phone') {
-          msg.innerHTML = 'Veuillez saisir un numéro de téléphone valide avec 13 caractères maximum.';
-        } else {
-          msg.innerHTML = field.validationMessage;
-        }
-
-        validity = false;
-      } else {
-        field.classList.add('valid');
-        field.classList.remove('error');
-        msg.innerHTML = '';
-      }
-    }
-
-    return validity;
+    for (let a of c) a.classList.remove('valid'), a.classList.remove('error'), a.parentNode.querySelector('.error-msg').innerHTML = '';
   };
 
-  for (let field of fields) {
-    const msg = document.createElement('div');
-    msg.className = 'error-msg';
-    field.parentNode.appendChild(msg);
-    const status = document.createElement('div');
-    status.className = 'status';
-    field.parentNode.appendChild(status);
-    field.addEventListener('input', () => {
-      validate();
-    });
+  const g = () => {
+    if (!f) {
+      e = !0;
+
+      for (let b of c) {
+        const c = b.parentNode.querySelector('.error-msg'),
+              f = b.dataset.typemismatch,
+              g = b.dataset.patternmismatch,
+              h = b.validity.tooLong,
+              i = b.validity.tooShort,
+              j = b.validity.typeMismatch,
+              k = b.validity.patternMismatch,
+              l = b.validity.stepMismatch,
+              m = b.validity.valueMissing;
+
+        if (!b.checkValidity()) {
+          b.classList.add('error'), b.classList.remove('valid');
+          var a = "";
+          (j || h || i || l) && f && (a = f), k && g && (a = g), m && d && (a = d), b.setCustomValidity(a), c.innerHTML = b.validationMessage, e = !1;
+        } else b.classList.add('valid'), b.classList.remove('error'), c.innerHTML = '';
+      }
+
+      return e;
+    }
+  };
+
+  for (let d of c) {
+    const a = document.createElement('div');
+    a.className = 'error-msg', d.parentNode.appendChild(a), d.addEventListener('input', () => g());
   }
 
-  form.onsubmit = e => {
-    e.preventDefault();
-
-    if (!valueMissing) {
-      init = false;
-      if (validate()) onSend();
-    }
+  a.onsubmit = a => {
+    a.preventDefault(), f = !1, g() && b();
   };
 };
 
-var _default = FormValidate;
-exports.default = _default;
+export default FormValidate;
