@@ -10,7 +10,6 @@
             </nav>
             <ul>
                 <li><button data-module="popin" data-tag="popin, popup">Popin</button></li>
-                <li><button data-module="slider" data-tag="slider, carousel">Slider</button></li>
                 <li><button data-module="form" data-tag="formulaire">Form</button></li>
                 <li><button data-module="formValidate" data-tag="">Form validate</button></li>
                 <li><button data-module="formPlaceholder" data-tag="">Form placeholder</button></li>
@@ -18,17 +17,22 @@
                 <li><button data-module="rgpd" data-tag="cookie banner">Rgpd</button></li>
                 <li><button data-module="quickMsg" data-tag="modal">QuickMsg</button></li>
                 <li><button data-module="breakpoint" data-tag="">Breakpoint</button></li>
-                <li><button data-module="pagerAjax" data-tag="">Pagination Ajax</button></li>
-                <li><button data-module="moreAjax" data-tag="">More Ajax</button></li>
-                <li><button data-module="filterAjax" data-tag="">Filter Ajax</button></li>
-                <li><button data-module="swipeToGrid" data-tag="slide">Swipe to grid</button></li>
                 <li><button data-module="reveal" data-tag="intersection observer">Reveal</button></li>
                 <li><button data-module="accordion" data-tag="">Accordion</button></li>
-                <li><button data-module="paralax" data-tag="">Paralax</button></li>
+                <li><button data-module="lazyLoad" data-tag="">Lazyload</button></li>
+                <li><button data-module="dropdown" data-tag="">Dropdown</button></li>
+                <li><button data-module="navtab" data-tag="">Navtab</button></li>
+                <li><button data-module="filterAjax" data-tag="">Filter Ajax</button></li>
+                <li><button data-module="pagerAjax" data-tag="">Pager Ajax</button></li>                
                 <li><button data-module="svgAnimate" data-tag="">Svg Animate</button></li>
                 <li><button data-module="scrollSmooth" data-tag="">Scroll smooth</button></li>
+
+                <li><button data-module="slider" data-tag="slider, carousel">Slider</button></li>
+                <li><button data-module="swipeToGrid" data-tag="slide">Swipe to grid</button></li>
+
+                <li><button data-module="paralax" data-tag="">Paralax</button></li>
+                
                 <li><button data-module="scrollAnimate" data-tag="">Scroll animate</button></li>
-                <li><button data-module="lazyLoad" data-tag="">Lazyload</button></li>
             </ul>
         </div>
     </div>
