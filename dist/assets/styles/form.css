@@ -141,20 +141,20 @@ form:not(.custom):not(#loginform) .field{
     color: inherit;
     font-style: normal;
     font-family: inherit;
-    opacity: 1;
+    opacity: .5;
     font-weight: 400;
 }
 ::-moz-placeholder {
     color: inherit;
     font-style: normal;
     font-family: inherit;
-    opacity: 1;
+    opacity: .5;
     font-weight: 400;
 }
 :-ms-input-placeholder {
     color: inherit;
     font-style: normal;
     font-family: inherit;
-    opacity: 1;
+    opacity: .5;
     font-weight: 400;
 }
