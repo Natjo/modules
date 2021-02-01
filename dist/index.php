@@ -25,13 +25,17 @@
                 <li><button data-module="navsection" data-tag="">Nav section</button></li>
                 <li><button data-module="filterAjax" data-tag="">Filter Ajax</button></li>
                 <li><button data-module="pagerAjax" data-tag="">Pager Ajax</button></li>                
-                <li><button data-module="svgAnimate" data-tag="">Svg Animate</button></li>
+                <li><button data-module="svgAnimate" data-tag="">Svg stroke animate</button></li>
                 <li><button data-module="scrollSmooth" data-tag="">Scroll smooth</button></li>
                 <li><button data-module="scrollAnimate" data-tag="">Scroll animate</button></li>
                 
+                <li><button data-module="carousel" data-tag="slider, carousel">Carousel</button></li>
                 <li><button data-module="slider" data-tag="slider, carousel">Slider</button></li>
                 <li><button data-module="swipeToGrid" data-tag="slide">Swipe to grid</button></li>
                 <li><button data-module="paralax" data-tag="">Paralax</button></li>
+                <li><button data-module="customScrollbar" data-tag="scroll">Custom scrollbar</button></li>
+                <li><button data-module="apiYoutube" data-tag="youtube">Api youtube</button></li>
+                <li><button data-module="autocomplete" data-tag="autocomplete">Autocomplete</button></li>
             </ul>
         </div>
     </div>

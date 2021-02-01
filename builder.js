@@ -66,7 +66,7 @@ const core = {
         result = babel.transform(result, {
             minified: isProd ? true : false,
             comments: false,
-            presets:["minify"]
+            presets:[["minify",{"builtIns": false}]]
 
         }).code;
 
