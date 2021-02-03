@@ -28,12 +28,12 @@
                 <li><button data-module="svgAnimate" data-tag="">Svg stroke animate</button></li>
                 <li><button data-module="scrollSmooth" data-tag="">Scroll smooth</button></li>
                 <li><button data-module="scrollAnimate" data-tag="">Scroll animate</button></li>
+                <li><button data-module="customScrollbar" data-tag="scroll, custom">Custom scrollbar</button></li>
                 
                 <li><button data-module="carousel" data-tag="slider, carousel">Carousel</button></li>
                 <li><button data-module="slider" data-tag="slider, carousel">Slider</button></li>
                 <li><button data-module="swipeToGrid" data-tag="slide">Swipe to grid</button></li>
                 <li><button data-module="paralax" data-tag="">Paralax</button></li>
-                <li><button data-module="customScrollbar" data-tag="scroll">Custom scrollbar</button></li>
                 <li><button data-module="apiYoutube" data-tag="youtube">Api youtube</button></li>
                 <li><button data-module="autocomplete" data-tag="autocomplete">Autocomplete</button></li>
             </ul>
